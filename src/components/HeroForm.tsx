@@ -7,7 +7,7 @@ const HeroForm = () => {
         action=""
         className="flex flex-col items-center max-w-200 w-full gap-15 md:gap-7.5"
       >
-        <div className="flex flex-col gap-4 md:flex-row md:gap-2.5 w-full max-w-150 md:max-w-170">
+        <div className="flex flex-col gap-4 md:flex-row md:gap-2.5 w-full max-w-170 md:max-w-170">
           <input
             type="email"
             name="email"
@@ -18,10 +18,10 @@ const HeroForm = () => {
             className="py-3.5 px-5 flex-1 bg-white shadow border-0 outline-none text-[14px] rounded-[50px]  w-full"
           />
 
-          <button className="select-none text-[12px]  py-4  gap-2.5 hidden md:flex items-center text-white hover:bg-[#fa9c29]  bg-[#ff9c23] cursor-pointer px-6  rounded-[15px]">
+          <div className="select-none text-[12px] py-4 whitespace-nowrap gap-2.5 hidden md:flex items-center text-white hover:bg-[#fa9c29]  bg-[#ff9c23] cursor-pointer px-6  rounded-[15px]">
             I am a?
             <FiChevronRight size={18} className="text-2xl text-white" />
-          </button>
+          </div>
 
           <button className="select-none  text-[12px] text-white hidden md:flex items-center hover:bg-[#fa9c29]  bg-[#ff9c23] cursor-pointer px-8 rounded-[23px]">
             Join the Waitlist!
@@ -29,7 +29,7 @@ const HeroForm = () => {
 
           {/* Mobile */}
           <div className="flex gap-5 justify-center md:hidden w-full">
-            <div className="select-none text-[12px]  py-4  gap-2.5 flex items-center text-white hover:bg-[#fa9c29]  bg-[#ff9c23] cursor-pointer px-8  rounded-[15px]">
+            <div className="select-none text-[12px]  py-4  gap-2.5 flex items-center text-white hover:bg-[#fa9c29]  bg-[#ff9c23] cursor-pointer px-6  rounded-[15px]">
               I am a?
               <FiChevronRight size={18} className="text-2xl text-white" />
             </div>
@@ -56,7 +56,7 @@ const HeroForm = () => {
         </div>
 
         {/* Mobile */}
-        <div className="flex flex-col w-full items-center gap-7 md:hidden">
+        <div className="flex flex-col w-full mb-10 items-center gap-7 md:hidden">
           <div className="flex  gap-10">
             <button className="bg-[#ff9c23] text-[15px]  text-white px-5 py-1.25 rounded-2xl">
               Anonymous & Secure

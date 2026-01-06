@@ -6,11 +6,11 @@ const Hero = () => {
   return (
     <div className="relative overflow-hidden">
       <div className="flex flex-col items-center">
-        <p className="md:text-[64px] text-[45px] font-bold">
+        <p className="md:text-[64px] text-[37px] font-bold">
           <span className="text-[#FFC45C] mr-2">Listen</span>
           <span className="text-[#F49B31]">Better.</span>
         </p>
-        <p className="md:text-[64px] text-[45px] font-bold">
+        <p className="md:text-[64px] text-[37px] font-bold">
           <span className="text-[#FFC45C] mr-2">Lead</span>
           <span className="text-[#F49B31]">Smarter.</span>
         </p>
