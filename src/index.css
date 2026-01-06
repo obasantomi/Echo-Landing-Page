@@ -11,3 +11,8 @@ body {
   font-family: var(--font-poppins);
   background-color: #fae9d4;
 }
+
+
+html {
+  scrollbar-width: none;
+}

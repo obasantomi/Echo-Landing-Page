@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <NavBar />
-      <Hero />
+      <div className="mt-60 lg:mt-40 px-5">
+        <Hero />
+      </div>
     </>
   );
 }
