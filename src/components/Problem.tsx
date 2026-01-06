@@ -7,7 +7,7 @@ import heart from "../assets/images/heart.svg";
 
 const Problem = () => {
   return (
-    <div className="bg-black text-white px-5 pt-27.5">
+    <div className="bg-black text-white px-5  pt-27.5">
       <div className="flex flex-col items-center mx-auto max-w-137.5">
         <p className="text-[#F49B31] mb-10">The Problem</p>
         <h1 className="text-[60px] text-center">
@@ -17,7 +17,7 @@ const Problem = () => {
 
       <div className="flex flex-col md:flex-row gap-5 justify-between items-center mt-10">
         <div className="mb-10 md:mb-0">
-          <div className="flex flex-col  items-center">
+          <div className="flex flex-col select-none items-center">
             <h1 className="lg:text-[120px] text-[100px] text-[#F49B31] font-bold">
               60%
             </h1>
@@ -31,11 +31,11 @@ const Problem = () => {
           </div>
         </div>
 
-        <div>
+        <div className="select-none">
           <img src={Noise} alt="" className="w-md" />
         </div>
 
-        <div className="flex flex-col max-w-62.5 items-center">
+        <div className="flex flex-col max-w-62.5 select-none items-center">
           <h1 className="lg:text-[120px] text-[100px] text-[#F49B31] font-bold">
             70%
           </h1>
@@ -49,7 +49,7 @@ const Problem = () => {
         </div>
       </div>
 
-      <div className="grid max-w-250 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-x-12 mt-12.5">
+      <div className="grid max-w-250 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-10 gap-x-12 mt-12.5">
         <ProblemCard count={"01"} problemIcon={shout}>
           Students speak, but it becomes chaos.
         </ProblemCard>

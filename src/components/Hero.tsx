@@ -5,7 +5,7 @@ import Feed from "../assets/images/Feed - Landing 1.png";
 const Hero = () => {
   return (
     <div className="relative overflow-hidden">
-      <div className="flex flex-col items-center">
+      <div className="flex select-none flex-col items-center">
         <p className="md:text-[64px] text-[37px] font-bold">
           <span className="text-[#FFC45C] mr-2">Listen</span>
           <span className="text-[#F49B31]">Better.</span>
@@ -27,12 +27,12 @@ const Hero = () => {
       <img
         src={Feed}
         alt=""
-        className="absolute hidden lg:block -z-20 -bottom-70 -left-90"
+        className="absolute select-none hidden lg:block -z-20 -bottom-70 -left-90"
       />
       <img
         src={Admin}
         alt=""
-        className="absolute hidden lg:block -z-20 -bottom-70 -right-90"
+        className="absolute select-none hidden lg:block -z-20 -bottom-70 -right-90"
       />
     </div>
   );

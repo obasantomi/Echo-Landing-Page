@@ -1,4 +1,4 @@
-import logo from "../assets/icons/Echo Logo (Coloured).svg";
+import logo from "../assets/images/Echo Logo (Coloured).svg";
 
 const NavBar = () => {
   return (

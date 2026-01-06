@@ -2,9 +2,9 @@ import { FiChevronRight } from "react-icons/fi";
 
 const HeroForm = () => {
   return (
-    <div className="flex justify-center mt-40 md:mt-80 z-20">
+    <div className="flex justify-center mt-40 px-5 md:mt-80 z-20">
       <form
-        action=""
+        onSubmit={(e) => e.preventDefault()}
         className="flex flex-col items-center max-w-200 w-full gap-15 md:gap-7.5"
       >
         <div className="flex flex-col gap-4 md:flex-row md:gap-2.5 w-full max-w-170 md:max-w-170">
@@ -23,7 +23,7 @@ const HeroForm = () => {
             <FiChevronRight size={18} className="text-2xl text-white" />
           </div>
 
-          <button className="select-none  text-[12px] text-white hidden md:flex items-center hover:bg-[#fa9c29]  bg-[#ff9c23] cursor-pointer px-8 rounded-[23px]">
+          <button className="select-none  text-[12px] text-white hidden md:flex items-center hover:bg-[#fa9c29]  bg-[#ff9c23] cursor-pointer px-8 rounded-[15px]">
             Join the Waitlist!
           </button>
 
