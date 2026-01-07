@@ -1,4 +1,5 @@
 import "./App.css";
+import ForLeaders from "./components/ForLeaders";
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
 import NavBar from "./components/NavBar";
@@ -15,7 +16,7 @@ function App() {
       <Problem />
       <Solution />
       <HowItWorks />
-
+      <ForLeaders />
     </>
   );
 }

@@ -4,7 +4,7 @@ import action from "../assets/images/ActionDisplay.png";
 
 const HowItWorks = () => {
   return (
-    <section className="my-40 px-10  md:px-20 md:justify-between justify-center flex flex-col md:flex-row gap-10">
+    <section className="mt-40 mb-20 px-10  md:px-20 md:justify-between justify-center flex flex-col md:flex-row gap-10">
       {/* LEFT — Sticky column */}
       <div className="flex h-full md:mt-5 md:sticky md:top-25 justify-center">
         <div className=" flex flex-col items-center md:items-start gap-10 max-w-100">
