@@ -24,15 +24,15 @@ const HowItWorks = () => {
       <div className="overflow-x-scroll md:overflow-auto [scrollbar-width:none]">
         <div className="flex flex-row w-250 md:w-full md:flex-col gap-15 text-[#F49B31]">
           <div className="flex flex-col gap-5 items-center">
-            <img src={form} alt="" className="float-right" />
+            <img src={form} alt="" className="float-right" draggable="false"/>
             <p>Claim Your Voice</p>
           </div>
           <div className="flex flex-col gap-5 items-center">
-            <img src={surge} alt="" />
+            <img src={surge} alt="" draggable="false"/>
             <p>Drive the Agenda</p>
           </div>
           <div className="flex flex-col gap-5 items-center">
-            <img src={action} alt="" />
+            <img src={action} alt="" draggable="false"/>
             <p>See Real Action</p>
           </div>
         </div>

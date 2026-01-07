@@ -5,6 +5,7 @@ import HowItWorks from "./components/HowItWorks";
 import NavBar from "./components/NavBar";
 import Problem from "./components/Problem";
 import Solution from "./components/Solution";
+import WhyUs from "./components/WhyUs";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Solution />
       <HowItWorks />
       <ForLeaders />
+      <WhyUs />
     </>
   );
 }

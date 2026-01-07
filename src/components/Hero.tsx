@@ -28,11 +28,13 @@ const Hero = () => {
         src={Feed}
         alt=""
         className="absolute select-none hidden lg:block -z-20 -bottom-70 -left-90"
+        draggable="false"
       />
       <img
         src={Admin}
         alt=""
         className="absolute select-none hidden lg:block -z-20 -bottom-70 -right-90"
+        draggable="false"
       />
     </div>
   );

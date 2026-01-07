@@ -32,7 +32,7 @@ const Problem = () => {
         </div>
 
         <div className="select-none">
-          <img src={Noise} alt="" className="w-md" />
+          <img src={Noise} alt="" className="w-md" draggable="false" />
         </div>
 
         <div className="flex flex-col max-w-62.5 select-none items-center">
