@@ -1,5 +1,7 @@
 import lock from "../assets/images/lock.svg";
 import community from "../assets/images/community.svg";
+import anonymous from "../assets/images/anonymous.svg";
+import hands from "../assets/images/hands.svg";
 
 const WhyUs = () => {
   return (
@@ -25,7 +27,7 @@ const WhyUs = () => {
 
         <div className="flex gap-3.75 text-[#454545] flex-col items-center">
           <span className="h-30 w-30 rounded-full bg-white flex justify-center items-center">
-            <img src={lock} alt="" />
+            <img src={anonymous} alt="" className="w-1/2" />
           </span>
 
           <p className="text-center text-[12px]">Anonymous posting</p>
@@ -33,7 +35,7 @@ const WhyUs = () => {
 
         <div className="flex gap-3.75 text-[#454545] flex-col items-center">
           <span className="h-30 w-30 rounded-full bg-white flex justify-center items-center">
-            <img src={lock} alt="" />
+            <img src={hands} alt="" />
           </span>
 
           <p className="text-center text-[12px]">
