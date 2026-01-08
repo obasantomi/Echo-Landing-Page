@@ -14,5 +14,10 @@ body {
 
 
 html {
+  scroll-behavior: smooth;
   scrollbar-width: none;
+}
+
+section {
+  scroll-margin-top: 87px;
 }

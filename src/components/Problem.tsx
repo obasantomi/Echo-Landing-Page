@@ -4,16 +4,25 @@ import shout from "../assets/images/shout.svg";
 import broken from "../assets/images/broken.svg";
 import layer from "../assets/images/Layer_2.svg";
 import heart from "../assets/images/heart.svg";
+import { motion } from "motion/react";
+import { useState } from "react";
 
 const Problem = () => {
+
+ const [animate, setAnimate] = useState(false);
+
   return (
-    <div className="bg-black text-white px-5  pt-27.5">
-      <div className="flex flex-col items-center mx-auto max-w-137.5">
+    <section id="problem" onMouseEnter={() => setAnimate(true)} className="bg-black text-white px-5  pt-27.5">
+      <motion.div
+      initial={{ y: 20, opacity:0}}
+      animate={animate && { y: 0, opacity:1}}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="flex flex-col items-center mx-auto max-w-137.5">
         <p className="text-[#F49B31] mb-10">The Problem</p>
         <h1 className="text-[60px] text-center">
           Feedback today is noise not insight.
         </h1>
-      </div>
+      </motion.div>
 
       <div className="flex flex-col md:flex-row gap-5 justify-between items-center mt-10">
         <div className="mb-10 md:mb-0">
@@ -63,7 +72,7 @@ const Problem = () => {
           Trust suffers on both sides.
         </ProblemCard>
       </div>
-    </div>
+    </section>
   );
 };
 

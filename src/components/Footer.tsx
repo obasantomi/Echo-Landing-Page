@@ -5,10 +5,11 @@ import twitter from "../assets/images/twitterr.svg";
 import facebook from "../assets/images/facebook.svg";
 import instagram from "../assets/images/instagram.svg";
 import youtube from "../assets/images/youtube.svg";
+import { motion } from "motion/react";
 
 const Footer = () => {
   return (
-    <footer className="p-10 flex flex-col bg-[#F49B31] ">
+    <motion.footer layout className="p-10 flex flex-col bg-[#F49B31] ">
       <div className="flex gap-1 items-center">
         <span>
           <img src={logo} alt="" className="inline" />
@@ -56,7 +57,7 @@ const Footer = () => {
           </span>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

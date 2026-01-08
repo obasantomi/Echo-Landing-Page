@@ -14,21 +14,21 @@ const NavBar = () => {
 
         {/* Links */}
         <ul className="inline-flex text-[#060B13] gap-5 md:gap-2 flex-1 justify-around md:justify-between text-[12px] font-normal">
-          <li className="cursor-pointer select-none">Home</li>
+          <li className="cursor-pointer select-none"><a href="#home">Home</a></li>
           <li className="cursor-pointer select-none hidden md:block">
-            The Problem
+            <a href="#problem">The Problem</a>
           </li>
           <li className="cursor-pointer select-none block md:hidden">
-            Problem
+            <a href="#problem">Problem</a>
           </li>
-          <li className="cursor-pointer select-none">Solution</li>
+          <li className="cursor-pointer select-none"><a href="#solution">Solution</a></li>
           <li className="cursor-pointer select-none hidden md:block">
-            How it works
+            <a href="#how-it-works">How it works</a>
           </li>
           <li className="cursor-pointer select-none hidden md:block">
-            For Leaders
+            <a href="#for-leaders">For Leaders</a>
           </li>
-          <li className="cursor-pointer select-none hidden md:block">FAQ</li>
+          <li className="cursor-pointer select-none hidden md:block"><a href="#faq">FAQ</a></li>
         </ul>
 
         {/* Join Waitlist */}

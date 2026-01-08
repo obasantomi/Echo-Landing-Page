@@ -1,5 +1,6 @@
 import "./App.css";
 import Credibility from "./components/Credibility";
+import Faqs from "./components/Faqs";
 import Footer from "./components/Footer";
 import ForLeaders from "./components/ForLeaders";
 import Hero from "./components/Hero";
@@ -14,9 +15,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="mt-60 lg:mt-40 overflow-hidden">
-        <Hero />
-      </div>
+      <Hero />
       <Problem />
       <Solution />
       <HowItWorks />
@@ -24,6 +23,7 @@ function App() {
       <WhyUs />
       <Credibility />
       <WaitList />
+      <Faqs />
       <Footer />
     </>
   );

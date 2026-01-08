@@ -5,7 +5,9 @@ import hands from "../assets/images/hands.svg";
 
 const WhyUs = () => {
   return (
-    <section className="bg-[#FFC37B] py-10 px-5 flex items-center gap-10.5 flex-col">
+    <section
+    id="why-us"
+    className="bg-[#FFC37B] py-10 px-5 flex items-center gap-10.5 flex-col">
       <p>Why us??</p>
 
       <div className="grid grid-cols-2 gap-10 lg:grid-cols-4 md:gap-30">
