@@ -1,5 +1,6 @@
 import "./App.css";
 import Credibility from "./components/Credibility";
+import Footer from "./components/Footer";
 import ForLeaders from "./components/ForLeaders";
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
@@ -23,6 +24,7 @@ function App() {
       <WhyUs />
       <Credibility />
       <WaitList />
+      <Footer />
     </>
   );
 }

@@ -12,12 +12,12 @@ const Credibility = () => {
 
         <div className="flex gap-15">
 
-<div className="flex flex-col items-center gap-3">
-<img src={hsl} alt="" />
+<div className="flex flex-col items-center gap-3 select-none">
+<img src={hsl} alt="" draggable="false"/>
     <p className="text-center">Hebron Startup Lab</p>
 </div>
-<div className="flex flex-col items-center gap-3">
-<img src={cloud} alt="" />
+<div className="flex flex-col items-center gap-3 select-none">
+<img src={cloud} alt="" draggable="false"/>
     <p>CloudPlexo</p>
 </div>
 
