@@ -8,7 +8,7 @@ import surge from "../assets/images/Surges.svg";
 
 const Solution = () => {
   return (
-    <section id="solution" className="pt-30 px-5 ">
+    <section id="solution" className="pt-10 px-5 ">
       <div className="flex select-none flex-col items-center">
         <p className="text-[#F49B31] mb-5">The Solution</p>
         <p className="md:text-[45px] text-[37px] font-semibold">

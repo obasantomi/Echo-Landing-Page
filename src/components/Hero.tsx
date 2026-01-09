@@ -8,7 +8,7 @@ const Hero = () => {
     <section id="home" className="relative mt-60 lg:mt-40  overflow-hidden">
       <motion.div
         initial={{ y: 40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
         className="flex select-none flex-col items-center"
       >

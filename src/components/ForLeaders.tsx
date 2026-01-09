@@ -4,15 +4,12 @@ import dashboard from "../assets/images/dashboard.svg";
 import anonymous from "../assets/images/anonymous.svg";
 import verctorLogo from "../assets/images/VectorLogo.svg";
 import { motion } from "motion/react";
-import { useState } from "react";
+
 
 const ForLeaders = () => {
-  const [animate, setAnimate] = useState(false);
-
   return (
     <section
       id="for-leaders"
-      onMouseEnter={() => setAnimate(true)}
       className="bg-[#F49B31] pb-20 px-5 flex flex-col gap-10 pt-10"
     >
       <div className="flex flex-col items-center mx-auto  text-white max-w-300">
@@ -45,7 +42,8 @@ const ForLeaders = () => {
           <div className="flex justify-center">
             <motion.img
               initial={{ rotate: -360, scale: 0.2 }}
-              animate={animate && { rotate: 0, scale: 1 }}
+              whileInView={{ rotate: 0, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 1.3, ease: "easeInOut" }}
               src={verctorLogo}
               alt=""

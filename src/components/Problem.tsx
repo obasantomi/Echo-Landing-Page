@@ -5,19 +5,17 @@ import broken from "../assets/images/broken.svg";
 import layer from "../assets/images/Layer_2.svg";
 import heart from "../assets/images/heart.svg";
 import { motion } from "motion/react";
-import { useState } from "react";
 
 const Problem = () => {
-
- const [animate, setAnimate] = useState(false);
-
   return (
-    <section id="problem" onMouseEnter={() => setAnimate(true)} className="bg-black text-white px-5  pt-27.5">
+    <section id="problem" className="bg-black text-white px-5 pt-20">
       <motion.div
-      initial={{ y: 20, opacity:0}}
-      animate={animate && { y: 0, opacity:1}}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="flex flex-col items-center mx-auto max-w-137.5">
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1,}}
+        viewport={{amount: 0.8}}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="flex flex-col items-center mb-20 mx-auto max-w-137.5"
+      >
         <p className="text-[#F49B31] mb-10">The Problem</p>
         <h1 className="text-[60px] text-center">
           Feedback today is noise not insight.
@@ -40,9 +38,19 @@ const Problem = () => {
           </div>
         </div>
 
-        <div className="select-none">
+        <motion.div
+          animate={{ opacity: [0.1, 1] }}
+          transition={{
+            duration: 0.8,
+            repeat: Infinity,
+            repeatType: "loop",
+            repeatDelay: 0.5,
+            ease: "easeInOut",
+          }}
+          className="select-none"
+        >
           <img src={Noise} alt="" className="w-md" draggable="false" />
-        </div>
+        </motion.div>
 
         <div className="flex flex-col max-w-62.5 select-none items-center">
           <h1 className="lg:text-[120px] text-[100px] text-[#F49B31] font-bold">
@@ -58,7 +66,7 @@ const Problem = () => {
         </div>
       </div>
 
-      <div className="grid max-w-250 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-10 gap-x-12 mt-12.5">
+      <div className="grid max-w-250 xl:max-w-300 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-5 xl:gap-x-24 gap-x-12 mt-25">
         <ProblemCard count={"01"} problemIcon={shout}>
           Students speak, but it becomes chaos.
         </ProblemCard>

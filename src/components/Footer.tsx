@@ -23,17 +23,23 @@ const Footer = () => {
         </p>
 
         <ul className="flex flex-col items-center md:flex-row gap-2 md:gap-8">
-          <li className="text-center cursor-pointer">Home</li>
-          <li className="text-center cursor-pointer">Features</li>
-          <li className="text-center cursor-pointer">How it works</li>
+          <li className="text-center cursor-pointer"><a href="#home">Home</a></li>
+          <li className="text-center cursor-pointer"><a href="#why-us">Features</a></li>
+          <li className="text-center cursor-pointer"><a href="#how-it-works">How it works</a></li>
         </ul>
 
         <p className="cursor-pointer">contact@echo-ng.com</p>
       </div>
 
-      <div className="flex justify-center mb-10">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 2 }}
+        className="flex justify-center mb-10"
+      >
         <img src={echo} alt="" draggable="false" className="select-none" />
-      </div>
+      </motion.div>
 
       <div className="pt-7 mt-7 text-[12px] flex md:flex-row flex-col gap-4 justify-between text-white border-t border-[#FFC37B]">
         <p>Copyright ©2025 echo-ng.com</p>
