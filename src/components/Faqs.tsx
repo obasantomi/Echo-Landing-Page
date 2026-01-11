@@ -5,7 +5,7 @@ const Faqs = () => {
   return (
     <section
       id="faq"
-      className="py-25 relative px-5 flex flex-col gap-15 items-center bg-white"
+      className="py-25 relative px-5 flex mt-30 md:mt-30 flex-col gap-15 items-center bg-white"
     >
       <header className="flex items-center max-w-125 flex-col">
         <p className="#F49B31 text-[#F49B31] text-[12px]">Echo FAQ's</p>

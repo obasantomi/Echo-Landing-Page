@@ -3,7 +3,6 @@ import surge from "../assets/images/SurgeDisplay.png";
 import action from "../assets/images/ActionDisplay.png";
 import { motion } from "motion/react";
 
-
 const HowItWorks = () => {
   return (
     <section
@@ -14,6 +13,7 @@ const HowItWorks = () => {
       <motion.div
         initial={{ x: -20, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ amount: 0.5 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
         className="flex h-full md:mt-5 md:sticky md:top-25 justify-center"
       >
