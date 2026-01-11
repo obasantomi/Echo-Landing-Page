@@ -6,7 +6,7 @@ import WaitingListForm from "./WaitingListForm";
 
 const WaitList = () => {
   return (
-    <section className="flex my-20 relative gap-10 px-5 items-center flex-col">
+    <section id="waitlist" className="flex my-20 relative gap-10 px-5 items-center flex-col">
       <header className="text-[#F49B31] flex flex-col items-center">
         <p className="text-[12px]">Start building the future now!</p>
         <h1 className="font-bold text-center text-[40px] md:text-[64px]">

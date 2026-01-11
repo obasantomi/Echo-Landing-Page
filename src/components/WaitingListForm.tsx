@@ -52,22 +52,24 @@ const WaitingListForm = () => {
             placeholder="Your email..."
             className="py-3.5 px-5 flex-1 max-h-12.5 bg-white shadow border-0 outline-none text-[14px] rounded-[50px]  w-full"
           />
-          {errors.email && (
-            <p className="text-[12px] ml-2 flex items-center gap-1 text-red-500">
-              {errors.email.message}
-              <span>
-                <BiErrorCircle />
-              </span>
-            </p>
-          )}
-          {identityError && (
-            <p className="text-[12px] ml-2 flex items-center gap-1 text-red-500">
-              {identityError}
-              <span>
-                <BiErrorCircle />
-              </span>
-            </p>
-          )}
+          <div className="flex gap-2">
+              {errors.email && (
+                <p className="text-[12px] ml-2 flex items-center gap-1 text-red-500">
+                  {errors.email.message}
+                  <span>
+                    <BiErrorCircle />
+                  </span>
+                </p>
+              )}
+              {identityError && (
+                <p className="text-[12px] ml-2 flex items-center gap-1 text-red-500">
+                  {identityError}
+                  <span>
+                    <BiErrorCircle />
+                  </span>
+                </p>
+              )}
+          </div>
         </div>
         <motion.div
           onClick={() => setOpenIdentity(!openIdentity)}
@@ -95,7 +97,7 @@ const WaitingListForm = () => {
               <div className="p-2 bg-white rounded-t-[10px]">
                 <motion.p
                   onClick={() => setIdentity("user")}
-                  className="py-1.5 px-5 b text-center hover:bg-[#F3F4F6] rounded-[10px]"
+                  className="py-1.5 px-5 cursor-pointer text-center hover:bg-[#F3F4F6] rounded-[10px]"
                 >
                   User
                 </motion.p>
@@ -103,7 +105,7 @@ const WaitingListForm = () => {
               <div className="p-2 bg-white rounded-b-[10px]">
                 <motion.p
                   onClick={() => setIdentity("leader")}
-                  className="py-1.5 px-5 rounded-[10px] hover:bg-[#F3F4F6] text-center"
+                  className="py-1.5 px-5 rounded-[10px] cursor-pointer hover:bg-[#F3F4F6] text-center"
                 >
                   Leader
                 </motion.p>
@@ -140,12 +142,12 @@ const WaitingListForm = () => {
                 }
                 exit={{ opacity: 0, y: 100 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="w-35 right-50 transform translate-x-53 flex md:hidden absolute flex-col"
+                className="w-35 cursor-pointer right-50 transform translate-x-53 flex md:hidden absolute flex-col"
               >
                 <div className="p-2 bg-white rounded-t-[10px]">
                   <motion.p
                     onClick={() => setIdentity("user")}
-                    className="py-1.5 px-5 b text-center hover:bg-[#F3F4F6] rounded-[10px]"
+                    className="py-1.5 px-5 cursor-pointer text-center hover:bg-[#F3F4F6] rounded-[10px]"
                   >
                     User
                   </motion.p>
@@ -153,7 +155,7 @@ const WaitingListForm = () => {
                 <div className="p-2 bg-white rounded-b-[10px]">
                   <motion.p
                     onClick={() => setIdentity("leader")}
-                    className="py-1.5 px-5 rounded-[10px] hover:bg-[#F3F4F6] text-center"
+                    className="py-1.5 px-5 rounded-[10px] cursor-pointer hover:bg-[#F3F4F6] text-center"
                   >
                     Leader
                   </motion.p>

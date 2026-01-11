@@ -22,17 +22,15 @@ const Solution = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 text-[#F49B31] justify-center mb-10 mt-12.5">
-        <SolutionCard image={pingPic} icon={ping} solution={"Report Issues"} />
+        <SolutionCard image={pingPic} icon={ping} solution={"Report Issues"} solutionTitle={"Pings"} />
         <SolutionCard
           image={wavePic}
           icon={wave}
-          solution={"Propose Solutions"}
-        />
+          solution={"Propose Solutions"} solutionTitle={"Wave"}        />
         <SolutionCard
           image={surgePic}
           icon={surge}
-          solution={"Prioritize What Matters"}
-        />
+          solution={"Prioritize What Matters"} solutionTitle={"Surge"}        />
       </div>
     </section>
   );

@@ -14,27 +14,33 @@ const NavBar = () => {
 
         {/* Links */}
         <ul className="inline-flex text-[#060B13] gap-5 md:gap-2 flex-1 justify-around md:justify-between text-[12px] font-normal">
-          <li className="cursor-pointer select-none"><a href="#home">Home</a></li>
+          <li className="cursor-pointer select-none">
+            <a href="#home">Home</a>
+          </li>
           <li className="cursor-pointer select-none hidden md:block">
             <a href="#problem">The Problem</a>
           </li>
           <li className="cursor-pointer select-none block md:hidden">
             <a href="#problem">Problem</a>
           </li>
-          <li className="cursor-pointer select-none"><a href="#solution">Solution</a></li>
+          <li className="cursor-pointer select-none">
+            <a href="#solution">Solution</a>
+          </li>
           <li className="cursor-pointer select-none hidden md:block">
             <a href="#how-it-works">How it works</a>
           </li>
           <li className="cursor-pointer select-none hidden md:block">
             <a href="#for-leaders">For Leaders</a>
           </li>
-          <li className="cursor-pointer select-none hidden md:block"><a href="#faq">FAQ</a></li>
+          <li className="cursor-pointer select-none hidden md:block">
+            <a href="#faq">FAQ</a>
+          </li>
         </ul>
 
         {/* Join Waitlist */}
-        <button className="border select-none border-[#F49B31] text-[12px] hidden md:block hover:bg-[#F49B31CC] hover:text-white bg-[#F49B314D] cursor-pointer px-5 py-2.5 rounded-[15px]">
+        <a href="#waitlist" className="border select-none border-[#F49B31] text-[12px] hidden md:block hover:bg-[#F49B31CC] hover:text-white bg-[#F49B314D] cursor-pointer px-5 py-2.5 rounded-[15px]">
           Join the Waitlist!
-        </button>
+        </a>
       </div>
     </div>
   );
