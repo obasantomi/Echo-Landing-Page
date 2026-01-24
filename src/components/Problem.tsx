@@ -11,8 +11,8 @@ const Problem = () => {
     <section id="problem" className="bg-black text-white px-5 pt-20">
       <motion.div
         initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1,}}
-        viewport={{amount: 0.8}}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ amount: 0.8 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="flex flex-col items-center mb-20 mx-auto max-w-137.5"
       >
@@ -22,13 +22,12 @@ const Problem = () => {
         </h1>
       </motion.div>
 
-      <div className="flex flex-col md:flex-row gap-5 justify-between items-center mt-10">
+      <div className="flex flex-col md:flex-row gap-5 md:gap-15 lg:gap-30 justify-center items-center mt-10">
         <div className="mb-10 md:mb-0">
           <div className="flex flex-col select-none items-center">
-            <h1 className="lg:text-[120px] text-[100px] text-[#F49B31] font-bold">
+            <h1 className="xl:text-[160px] text-[120px] text-[#F49B31] font-bold">
               60%
             </h1>
-
             <span className="flex flex-col items-center">
               <p className="text-center">
                 of people feel unheard by leadership.
@@ -37,7 +36,6 @@ const Problem = () => {
             </span>
           </div>
         </div>
-
         <motion.div
           animate={{ opacity: [0.1, 1] }}
           transition={{
@@ -49,14 +47,12 @@ const Problem = () => {
           }}
           className="select-none"
         >
-          <img src={Noise} alt="" className="w-md" draggable="false" />
+          <img src={Noise} alt="" className="w-sm" draggable="false" />
         </motion.div>
-
-        <div className="flex flex-col max-w-62.5 select-none items-center">
-          <h1 className="lg:text-[120px] text-[100px] text-[#F49B31] font-bold">
+        <div className="flex flex-col  select-none items-center">
+          <h1 className="xl:text-[160px] text-[120px] text-[#F49B31] font-bold">
             70%
           </h1>
-
           <span className="flex flex-col items-center">
             <p className="text-center">
               of institutions cite weak engagement as barrier
@@ -66,7 +62,7 @@ const Problem = () => {
         </div>
       </div>
 
-      <div className="grid max-w-250 xl:max-w-300 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-5 xl:gap-x-24 gap-x-12 mt-25">
+      <div className="grid max-w-250 xl:max-w-300 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-5  gap-x-12 mt-25">
         <ProblemCard count={"01"} problemIcon={shout}>
           Students speak, but it becomes chaos.
         </ProblemCard>

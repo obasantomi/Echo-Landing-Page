@@ -38,7 +38,7 @@ const Footer = () => {
         transition={{ duration: 2 }}
         className="flex justify-center mb-10"
       >
-        <img src={echo} alt="" draggable="false" className="select-none" />
+        <img src={echo} alt="" draggable="false" className="select-none w-full" />
       </motion.div>
 
       <div className="pt-7 mt-7 text-[12px] flex md:flex-row flex-col gap-4 justify-between text-white border-t border-[#FFC37B]">

@@ -7,7 +7,7 @@ const HowItWorks = () => {
   return (
     <section
       id="how-it-works"
-      className="mt-40 mb-20 px-10  md:px-20 md:justify-between justify-center flex flex-col md:flex-row gap-10"
+      className="mt-40 mb-20 px-10  md:px-20 xl:justify-center xl:gap-60 md:justify-between justify-center flex flex-col md:flex-row gap-10"
     >
       {/* LEFT — Sticky column */}
       <motion.div
@@ -17,12 +17,12 @@ const HowItWorks = () => {
         transition={{ duration: 0.7, ease: "easeInOut" }}
         className="flex h-full md:mt-5 md:sticky md:top-25 justify-center"
       >
-        <div className=" flex flex-col items-center md:items-start gap-10 max-w-100">
+        <div className=" flex flex-col items-center md:items-start gap-5 max-w-120 xl:max-w-190">
           <p className="text-[#F49B31] text-[14px] whitespace-nowrap">
             How Echo works?
           </p>
 
-          <h1 className="text-[#FFC37B] text-[45px] text-center md:text-start font-semibold">
+          <h1 className="text-[#FFC37B] text-[65px] text-center md:text-start font-semibold">
             A Few Easy Steps to Start Making{" "}
             <span className="text-[#F49B31]">Change</span>
           </h1>
