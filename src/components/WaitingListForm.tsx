@@ -5,7 +5,6 @@ import { FiChevronRight } from "react-icons/fi";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BiErrorCircle } from "react-icons/bi";
-import { AiOutlineCheck } from "react-icons/ai"; // tick icon for success
 import SubmissionToast from "./SubmissionToast";
 
 const schema = z.object({
