@@ -6,7 +6,7 @@ import WaitingListForm from "./WaitingListForm";
 
 const WaitList = () => {
   return (
-    <section id="waitlist" className="flex my-20 relative gap-10 px-5 items-center flex-col">
+    <section id="waitlist" className="flex my-20 gap-10 px-5 items-center flex-col">
       <header className="text-[#F49B31] flex flex-col items-center">
         <p className="text-[12px]">Start building the future now!</p>
         <h1 className="font-bold text-center text-[40px] md:text-[64px]">
@@ -22,16 +22,18 @@ const WaitList = () => {
       <div className=" flex w-full flex-col items-center gap-5">
         <img src={change_sm} alt="" className="lg:hidden" />
 
-        <WaitingListForm />
-        <motion.img
-          initial={{ opacity: 0, right: 0 }}
-          whileInView={{ opacity: 1, right: 20 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          src={change}
-          alt=""
-          className="absolute right-20 hidden lg:block bottom-20"
-        />
+        <div className="w-full relative">
+          <WaitingListForm />
+          <motion.img
+            initial={{ opacity: 0, right: 0 }}
+            whileInView={{ opacity: 1, right: 20 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            src={change}
+            alt=""
+            className="absolute right-150 hidden lg:block bottom-30"
+          />
+        </div>
       </div>
     </section>
   );

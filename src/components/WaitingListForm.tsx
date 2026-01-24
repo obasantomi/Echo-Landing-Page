@@ -34,9 +34,6 @@ const WaitingListForm = () => {
     }
     reset();
     setIdentityError(null);
-
-    // Data sent to backend
-    console.log(data);
   }
 
   const [openIdentity, setOpenIdentity] = useState(false);
@@ -53,22 +50,22 @@ const WaitingListForm = () => {
             className="py-3.5 px-5 flex-1 max-h-12.5 bg-white shadow border-0 outline-none text-[14px] rounded-[50px]  w-full"
           />
           <div className="flex gap-2">
-              {errors.email && (
-                <p className="text-[12px] ml-2 flex items-center gap-1 text-red-500">
-                  {errors.email.message}
-                  <span>
-                    <BiErrorCircle />
-                  </span>
-                </p>
-              )}
-              {identityError && (
-                <p className="text-[12px] ml-2 flex items-center gap-1 text-red-500">
-                  {identityError}
-                  <span>
-                    <BiErrorCircle />
-                  </span>
-                </p>
-              )}
+            {errors.email && (
+              <p className="text-[12px] ml-2 flex items-center gap-1 text-red-500">
+                {errors.email.message}
+                <span>
+                  <BiErrorCircle />
+                </span>
+              </p>
+            )}
+            {identityError && (
+              <p className="text-[12px] ml-2 flex items-center gap-1 text-red-500">
+                {identityError}
+                <span>
+                  <BiErrorCircle />
+                </span>
+              </p>
+            )}
           </div>
         </div>
         <motion.div
