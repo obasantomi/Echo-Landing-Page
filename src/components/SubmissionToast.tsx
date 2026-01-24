@@ -1,31 +1,35 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FaCheck } from "react-icons/fa";
+import { AiOutlineCheck } from "react-icons/ai"; // green tick
+import { BiErrorCircle } from "react-icons/bi"; // red error
 
-interface ToastProps {
-  show?: boolean;
-  message?: string;
+interface SubmissionToastProps {
+  show: boolean;
+  message: string;
+  type?: "success" | "error";
 }
 
 const SubmissionToast = ({
   show,
-  message = "Joined successfully",
-}: ToastProps) => {
+  message,
+  type = "success",
+}: SubmissionToastProps) => {
   return (
     <AnimatePresence>
       {show && (
         <motion.div
-          initial={{ opacity: 0, y: 0, scale: 0.96 }}
-          animate={{ opacity: 1, y: 16, scale: 1 }}
-          exit={{ opacity: 0, y: 0, scale: 0.96 }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
-          className="fixed top-6 right-6 z-50 flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.3 }}
+          className="fixed top-5 right-5 z-50 flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg text-white"
+          style={{
+            backgroundColor: type === "success" ? "#22c55e" : "#ef4444", // green or red
+          }}
         >
-          {/* Icon */}
-          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-green-500">
-            <FaCheck className="text-white text-xs" />
-          </div>
-
-          <span className="text-sm font-medium text-gray-900">{message}</span>
+          <span className="text-lg">
+            {type === "success" ? <AiOutlineCheck /> : <BiErrorCircle />}
+          </span>
+          <p className="text-sm">{message}</p>
         </motion.div>
       )}
     </AnimatePresence>

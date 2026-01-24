@@ -1,10 +1,11 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiChevronRight } from "react-icons/fi";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BiErrorCircle } from "react-icons/bi";
+import { AiOutlineCheck } from "react-icons/ai"; // tick icon for success
 import SubmissionToast from "./SubmissionToast";
 
 const schema = z.object({
@@ -18,6 +19,8 @@ const WaitingListForm = () => {
   const [identity, setIdentity] = useState<string | null>(null);
   const [identityError, setIdentityError] = useState<string | null>(null);
   const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("Joined successfully");
+  const [toastType, setToastType] = useState<"success" | "error">("success");
 
   const {
     register,
@@ -28,25 +31,67 @@ const WaitingListForm = () => {
     resolver: zodResolver(schema),
   });
 
-  function onSubmit(data: FormData) {
+  async function onSubmit(data: FormData) {
     data.identity = identity;
     if (!data.identity) {
       setIdentityError("Please select an identity");
       return;
     }
-    reset();
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
-    setIdentityError(null);
+
+    try {
+      const formData = new FormData();
+      formData.append("email", data.email);
+      formData.append("identity", data.identity);
+
+      const response = await fetch("https://formspree.io/f/maqellqg", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (response.ok) {
+        // success
+        setToastMessage("Joined successfully");
+        setToastType("success");
+        setShowToast(true);
+        reset();
+        setIdentity(null);
+        setIdentityError(null);
+        setTimeout(() => setShowToast(false), 3000);
+      } else {
+        const resData = await response.json();
+        const errorMsg = resData.errors
+          ? resData.errors.map((err: any) => err.message).join(", ")
+          : "Submission failed";
+        setToastMessage(errorMsg);
+        setToastType("error");
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 3000);
+      }
+    } catch (err) {
+      console.error(err);
+      setToastMessage("Submission failed. Please try again.");
+      setToastType("error");
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+    }
   }
 
   const [openIdentity, setOpenIdentity] = useState(false);
 
   return (
     <>
-      <SubmissionToast show={showToast} />
+      <SubmissionToast
+        show={showToast}
+        message={toastMessage}
+        type={toastType}
+      />
+
       <form onSubmit={handleSubmit(onSubmit)} className="w-full">
         <div className="flex justify-self-center flex-col gap-4 md:flex-row md:gap-2.5 w-full max-w-170 md:max-w-250">
+          {/* Email Field */}
           <div className="flex flex-col gap-3 w-full">
             <input
               type="email"
@@ -59,26 +104,24 @@ const WaitingListForm = () => {
               {errors.email && (
                 <p className="text-[12px] ml-2 flex items-center gap-1 text-red-500">
                   {errors.email.message}
-                  <span>
-                    <BiErrorCircle />
-                  </span>
+                  <BiErrorCircle />
                 </p>
               )}
               {identityError && (
                 <p className="text-[12px] ml-2 flex items-center gap-1 text-red-500">
                   {identityError}
-                  <span>
-                    <BiErrorCircle />
-                  </span>
+                  <BiErrorCircle />
                 </p>
               )}
             </div>
           </div>
+
+          {/* Identity Selector */}
           <motion.div
             onClick={() => setOpenIdentity(!openIdentity)}
             className="flex flex-col relative gap-3"
           >
-            <div className="select-none text-[12px] py-4 whitespace-nowrap gap-2.5 hidden md:flex items-center text-white hover:bg-[#fa9c29]  bg-[#ff9c23] cursor-pointer px-6  rounded-[15px]">
+            <div className="select-none text-[12px] py-4 whitespace-nowrap gap-2.5 hidden md:flex items-center text-white hover:bg-[#fa9c29] bg-[#ff9c23] cursor-pointer px-6 rounded-[15px]">
               I am a?
               <motion.span
                 initial={{ rotate: 0 }}
@@ -88,66 +131,13 @@ const WaitingListForm = () => {
               </motion.span>
             </div>
             <AnimatePresence>
-              <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={
-                  openIdentity ? { opacity: 1, y: 55 } : { opacity: 0, y: 100 }
-                }
-                exit={{ opacity: 0, y: 100 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="w-35 right-50 transform translate-x-53 hidden md:flex absolute flex-col"
-              >
-                <div className="p-2 bg-white rounded-t-[10px]">
-                  <motion.p
-                    onClick={() => setIdentity("user")}
-                    className="py-1.5 px-5 cursor-pointer text-center hover:bg-[#F3F4F6] rounded-[10px]"
-                  >
-                    User
-                  </motion.p>
-                </div>
-                <div className="p-2 bg-white rounded-b-[10px]">
-                  <motion.p
-                    onClick={() => setIdentity("leader")}
-                    className="py-1.5 px-5 rounded-[10px] cursor-pointer hover:bg-[#F3F4F6] text-center"
-                  >
-                    Leader
-                  </motion.p>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </motion.div>
-          <button
-            type="submit"
-            className="select-none  text-[12px] text-white max-h-12.5 hidden md:flex items-center hover:bg-[#fa9c29]  bg-[#ff9c23] cursor-pointer px-8 rounded-[15px]"
-          >
-            Join the Waitlist!
-          </button>
-          {/* Mobile */}
-          <div className="flex gap-5 justify-center md:hidden w-full">
-            <motion.div
-              onClick={() => setOpenIdentity(!openIdentity)}
-              className="flex flex-col relative gap-3"
-            >
-              <div className="select-none text-[12px] py-4 whitespace-nowrap gap-2.5 flex md:hidden items-center text-white hover:bg-[#fa9c29]  bg-[#ff9c23] cursor-pointer px-6  rounded-[15px]">
-                I am a?
-                <motion.span
-                  initial={{ rotate: 0 }}
-                  animate={{ rotate: openIdentity ? 90 : 0 }}
-                >
-                  <FiChevronRight size={18} className="text-2xl text-white" />
-                </motion.span>
-              </div>
-              <AnimatePresence>
+              {openIdentity && (
                 <motion.div
                   initial={{ opacity: 0, y: 100 }}
-                  animate={
-                    openIdentity
-                      ? { opacity: 1, y: 55 }
-                      : { opacity: 0, y: 100 }
-                  }
+                  animate={{ opacity: 1, y: 55 }}
                   exit={{ opacity: 0, y: 100 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="w-35 cursor-pointer right-50 transform translate-x-53 flex md:hidden absolute flex-col"
+                  className="w-35 right-50 transform translate-x-53 hidden md:flex absolute flex-col"
                 >
                   <div className="p-2 bg-white rounded-t-[10px]">
                     <motion.p
@@ -166,6 +156,60 @@ const WaitingListForm = () => {
                     </motion.p>
                   </div>
                 </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="select-none text-[12px] text-white max-h-12.5 hidden md:flex items-center hover:bg-[#fa9c29] bg-[#ff9c23] cursor-pointer px-8 rounded-[15px]"
+          >
+            Join the Waitlist!
+          </button>
+
+          {/* Mobile */}
+          <div className="flex gap-5 justify-center md:hidden w-full">
+            <motion.div
+              onClick={() => setOpenIdentity(!openIdentity)}
+              className="flex flex-col relative gap-3"
+            >
+              <div className="select-none text-[12px] py-4 whitespace-nowrap gap-2.5 flex md:hidden items-center text-white hover:bg-[#fa9c29] bg-[#ff9c23] cursor-pointer px-6 rounded-[15px]">
+                I am a?
+                <motion.span
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: openIdentity ? 90 : 0 }}
+                >
+                  <FiChevronRight size={18} className="text-2xl text-white" />
+                </motion.span>
+              </div>
+              <AnimatePresence>
+                {openIdentity && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 55 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="w-35 cursor-pointer right-50 transform translate-x-53 flex md:hidden absolute flex-col"
+                  >
+                    <div className="p-2 bg-white rounded-t-[10px]">
+                      <motion.p
+                        onClick={() => setIdentity("user")}
+                        className="py-1.5 px-5 cursor-pointer text-center hover:bg-[#F3F4F6] rounded-[10px]"
+                      >
+                        User
+                      </motion.p>
+                    </div>
+                    <div className="p-2 bg-white rounded-b-[10px]">
+                      <motion.p
+                        onClick={() => setIdentity("leader")}
+                        className="py-1.5 px-5 rounded-[10px] cursor-pointer hover:bg-[#F3F4F6] text-center"
+                      >
+                        Leader
+                      </motion.p>
+                    </div>
+                  </motion.div>
+                )}
               </AnimatePresence>
             </motion.div>
             <button
