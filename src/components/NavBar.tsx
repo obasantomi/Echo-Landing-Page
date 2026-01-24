@@ -38,7 +38,10 @@ const NavBar = () => {
         </ul>
 
         {/* Join Waitlist */}
-        <a href="#waitlist" className="border select-none border-[#F49B31] text-[12px] hidden md:block hover:bg-[#F49B31CC] hover:text-white bg-[#F49B314D] cursor-pointer px-5 py-2.5 rounded-[15px]">
+        <a
+          href="#waitlist"
+          className="border select-none border-[#F49B31] text-[12px] hidden md:block hover:bg-[#F49B31CC] hover:text-white bg-[#F49B314D] cursor-pointer px-5 py-2.5 rounded-[15px]"
+        >
           Join the Waitlist!
         </a>
       </div>
