@@ -1,5 +1,4 @@
 import hsl from "../assets/images/Hsl Logo.svg";
-import cloud from "../assets/images/Cloud Plexo.svg";
 
 const Credibility = () => {
   return (
@@ -13,10 +12,6 @@ const Credibility = () => {
         <div className="flex flex-col items-center gap-3 select-none">
           <img src={hsl} alt="" draggable="false" />
           <p className="text-center">Hebron Startup Lab</p>
-        </div>
-        <div className="flex flex-col items-center gap-3 select-none">
-          <img src={cloud} alt="" draggable="false" />
-          <p>CloudPlexo</p>
         </div>
       </div>
     </section>
