@@ -29,7 +29,7 @@ const WaitList = () => {
             <a
               target="_blank"
               href="https://webapp-echo.vercel.app/signUp"
-              className="border bg-[#FEF5EA] transition-all duration-300 hover:bg-[#F49B31] hover:text-white border-[#F49B31] rounded-[40px] text-black py-5 px-25"
+              className="border transition-all duration-300 bg-[#F49B314D] hover:bg-[#F49B31] hover:text-white border-[#F49B31] rounded-[40px] text-black py-5 px-25"
             >
               Join ECHO
             </a>
