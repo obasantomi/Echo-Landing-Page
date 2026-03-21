@@ -2,11 +2,13 @@ import pointer from "../assets/images/pointer.svg";
 import change from "../assets/images/change.svg";
 import change_sm from "../assets/images/change_sm.svg";
 import { motion } from "motion/react";
-import WaitingListForm from "./WaitingListForm";
 
 const WaitList = () => {
   return (
-    <section id="waitlist" className="flex my-20 gap-10 px-5 items-center flex-col">
+    <section
+      id="waitlist"
+      className="flex mt-20 gap-10 px-5 items-center flex-col"
+    >
       <header className="text-[#F49B31] flex flex-col items-center">
         <p className="text-[12px]">Start building the future now!</p>
         <h1 className="font-bold text-center text-[40px] md:text-[64px]">
@@ -23,7 +25,15 @@ const WaitList = () => {
         <img src={change_sm} alt="" className="lg:hidden" />
 
         <div className="w-full relative">
-          <WaitingListForm />
+          <div className="flex justify-center">
+            <a
+              target="_blank"
+              href="https://webapp-echo.vercel.app/signUp"
+              className="border bg-[#FEF5EA] transition-all duration-300 hover:bg-[#F49B31] hover:text-white border-[#F49B31] rounded-[40px] text-black py-5 px-25"
+            >
+              Join ECHO
+            </a>
+          </div>
           <motion.img
             initial={{ opacity: 0, right: 0 }}
             whileInView={{ opacity: 1, right: 20 }}

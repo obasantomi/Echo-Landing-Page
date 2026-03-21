@@ -12,19 +12,30 @@ const Hero = () => {
         transition={{ duration: 0.7, ease: "easeInOut" }}
         className="flex select-none flex-col items-center"
       >
-        <p className="md:text-[64px] text-[37px] font-bold">
-          <span className="text-[#FFC45C] mr-2">Listen</span>
-          <span className="text-[#F49B31]">Better.</span>
+        <p className="md:text-[64px] text-center text-[#F49B31] max-w-210 mb-5 text-[37px] font-bold">
+          Where every voice drives real institutional change
         </p>
-        <p className="md:text-[64px] text-[37px] font-bold">
-          <span className="text-[#FFC45C] mr-2">Lead</span>
-          <span className="text-[#F49B31]">Smarter.</span>
-        </p>
-        <div className="flex gap-1">
-          <span className="text-[#F2A956]">Turn</span>
-          <span className="text-[#FFC37B]">Noise</span>
-          <span className="text-[#F2A956]">Into</span>
-          <span className="text-[#FFC37B]">Signal</span>
+
+        <div className="flex gap-1 text-center mb-5 text-[#F49B31] max-w-125">
+          Echo gives communities a space to raise problems, propose solutions,
+          and hold institutions accountable to act.
+        </div>
+
+        <div className="flex gap-3 mt-5">
+          <a
+            target="_blank"
+            href="https://webapp-echo.vercel.app/login"
+            className="bg-[#F49B31] hover:bg-[#F49B314D] text-white border transition-all duration-300  border-[#F49B31] rounded-[20px] py-3.75 px-7.5"
+          >
+            Log in
+          </a>
+          <a
+            target="_blank"
+            href="https://webapp-echo.vercel.app/signUp"
+            className=" text-[#F49B31] border transition-all duration-300 hover:bg-[#F49B31] hover:text-white border-[#F49B31] rounded-[20px] py-3.75 px-7.5"
+          >
+            Join ECHO
+          </a>
         </div>
       </motion.div>
 

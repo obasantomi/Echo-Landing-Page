@@ -1,12 +1,7 @@
-import WaitingListForm from "./WaitingListForm";
-
 const HeroForm = () => {
-
   return (
     <div className="flex justify-center mt-40 px-5 md:mt-80 z-20">
       <div className="flex flex-col  items-center pb-5 max-w-200 w-full gap-15 md:gap-7.5">
-        <WaitingListForm />
-
         <div className="gap-2.5 mb-10 hidden md:flex">
           <button className="bg-[#ff9c23] text-[12px] text-white px-2.5 py-1.25 rounded-2xl">
             Anonymous & Secure
