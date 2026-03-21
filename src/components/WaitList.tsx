@@ -11,8 +11,8 @@ const WaitList = () => {
     >
       <header className="text-[#F49B31] flex flex-col items-center">
         <p className="text-[12px]">Start building the future now!</p>
-        <h1 className="font-bold text-center text-[40px] md:text-[64px]">
-          JOIN THE WAIT-LIST!
+        <h1 className="font-bold text-center text-[60px] md:text-[90px]">
+          JOIN THE REVOLUTION!
         </h1>
         <p className="text-center">Be a part of Echo's founding community</p>
       </header>
