@@ -16,7 +16,7 @@ const Hero = () => {
           Where every voice drives real institutional change
         </p>
 
-        <div className="flex gap-1 text-center mb-5 text-[#F49B31] max-w-125">
+        <div className="flex gap-1 text-[12px] text-center mb-5 text-[#F49B31] px-1 md:max-w-125">
           Echo gives communities a space to raise problems, propose solutions,
           and hold institutions accountable to act.
         </div>

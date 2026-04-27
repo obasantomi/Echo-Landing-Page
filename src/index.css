@@ -10,12 +10,16 @@
 body {
   font-family: var(--font-poppins);
   background-color: #fae9d4;
+  overflow-x: hidden;
+  max-width: 100%;
 }
-
 
 html {
   scroll-behavior: smooth;
   scrollbar-width: none;
+  width: 100vw;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 section {

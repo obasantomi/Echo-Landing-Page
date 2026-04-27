@@ -11,7 +11,7 @@ const WaitList = () => {
     >
       <header className="text-[#F49B31] flex flex-col items-center">
         <p className="text-[12px]">Start building the future now!</p>
-        <h1 className="font-bold text-center text-[60px] md:text-[90px]">
+        <h1 className="font-bold text-center text-[44px] md:text-[90px]">
           JOIN THE REVOLUTION!
         </h1>
         <p className="text-center">Be a part of Echo's founding community</p>
@@ -29,7 +29,7 @@ const WaitList = () => {
             <a
               target="_blank"
               href="https://webapp-echo.vercel.app/signUp"
-              className="border transition-all duration-300 bg-[#F49B314D] hover:bg-[#F49B31] hover:text-white border-[#F49B31] rounded-[40px] text-black py-5 px-25"
+              className="border transition-all duration-300 bg-[#F49B314D] hover:bg-[#F49B31] hover:text-white border-[#F49B31] rounded-[40px] text-black py-2 px-3 md:py-5 md:px-25"
             >
               Join ECHO
             </a>

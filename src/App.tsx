@@ -13,7 +13,7 @@ import WhyUs from "./components/WhyUs";
 
 function App() {
   return (
-    <>
+    <div className="w-full">
       <NavBar />
       <Hero />
       <Problem />
@@ -25,7 +25,7 @@ function App() {
       <WaitList />
       <Faqs />
       <Footer />
-    </>
+    </div>
   );
 }
 
