@@ -7,7 +7,7 @@ const HowItWorks = () => {
   return (
     <section
       id="how-it-works"
-      className="mt-40 mb-20 px-10  md:px-20 xl:justify-center xl:gap-60 md:justify-between justify-center flex flex-col md:flex-row gap-10"
+      className="mt-40 h-full mb-20 px-10 md:px-20 xl:justify-center xl:gap-60 md:justify-between justify-center flex flex-col md:flex-row md:items-start gap-10"
     >
       {/* LEFT — Sticky column */}
       <motion.div
@@ -15,9 +15,9 @@ const HowItWorks = () => {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ amount: 0.5 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="flex h-full md:mt-5 md:sticky md:top-25 justify-center"
+        className="flex md:mt-5 md:sticky md:top-24 md:self-start justify-center"
       >
-        <div className=" flex flex-col items-center md:items-start gap-5 max-w-120 xl:max-w-190">
+        <div className="flex flex-col items-center md:items-start gap-5 max-w-120 xl:max-w-190">
           <p className="text-[#F49B31] text-[14px] whitespace-nowrap">
             How Echo works?
           </p>
@@ -31,7 +31,7 @@ const HowItWorks = () => {
 
       {/* RIGHT — Scrollable column */}
 
-      <div className="overflow-x-scroll md:overflow-auto [scrollbar-width:none]">
+      <div className="overflow-x-scroll [scrollbar-width:none]">
         <div className="flex flex-row  w-180 md:w-full md:flex-col gap-15 text-[#F49B31]">
           <div className="flex flex-col gap-5 items-center">
             <img

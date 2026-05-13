@@ -10,7 +10,7 @@ const Hero = () => {
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="flex select-none flex-col items-center"
+        className="flex select-none p-2 flex-col items-center"
       >
         <p className="md:text-[64px] text-center text-[#F49B31] max-w-210 mb-5 text-[37px] font-bold">
           Where every voice drives real institutional change
